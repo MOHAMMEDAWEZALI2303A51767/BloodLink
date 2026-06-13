@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import Layout from '../components/shared/Layout';
 import API from '../utils/api';
 
@@ -47,7 +47,7 @@ const Donors = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [total, setTotal] = useState(0);
 
-  const fetchDonors = async () => {
+  const fetchDonors = useCallback(async () => {
     setLoading(true);
     try {
       const params = new URLSearchParams({ page, limit: 12 });
@@ -68,7 +68,7 @@ const Donors = () => {
 
  useEffect(() => {
   fetchDonors();
-}, [page]);
+}, [page, fetchDonors]);
 
   const handleSearch = () => { setPage(1); fetchDonors(); };
 
