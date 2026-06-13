@@ -31,7 +31,10 @@ const Requests = () => {
     }
   };
 
-  useEffect(() => { fetchRequests(); }, [page]);
+  useEffect(() => {
+  fetchRequests();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [page]);
 
   const handleFilter = e => setFilters({ ...filters, [e.target.name]: e.target.value });
 

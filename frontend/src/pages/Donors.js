@@ -66,7 +66,9 @@ const Donors = () => {
     }
   };
 
-  useEffect(() => { fetchDonors(); }, [page]);
+ useEffect(() => {
+  fetchDonors();
+}, [page]);
 
   const handleSearch = () => { setPage(1); fetchDonors(); };
 

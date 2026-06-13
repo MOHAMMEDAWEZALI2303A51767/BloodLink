@@ -35,8 +35,6 @@ const Dashboard = () => {
     fetchStats();
   }, []);
 
-  const urgencyColor = { High: 'crimson', Medium: 'orange', Low: 'green' };
-
   return (
     <Layout title="Dashboard" subtitle={`Welcome back, ${user?.name}`}>
       {/* Quick Actions Banner */}
